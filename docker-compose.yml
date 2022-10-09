@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   springboot:
-    image: docregistry/spring-boot-app:ImageTag
+    image: 133827683661.dkr.ecr.ap-south-1.amazonaws.com/spring-boot-app:ImageTag
     restart: always # This will be ignored if we deploy in docker swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -23,7 +23,7 @@ services:
       restart_policy:
         condition: on-failure
         delay: 10s
-        max_attempts: 5
+        max_attempts: 1
 
   mongo:
     image: mongo
